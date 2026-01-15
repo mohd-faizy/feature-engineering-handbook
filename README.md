@@ -1,393 +1,363 @@
-![Author](https://img.shields.io/badge/author-faizy-red)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
-![Platform](https://img.shields.io/badge/platform-Visual%20Studio%20Code-blue)
-![Maintained](https://img.shields.io/maintenance/yes/2024)
-![Last Commit](https://img.shields.io/github/last-commit/mohd-faizy/feature-engineering-hacks)
-![Issues](https://img.shields.io/github/issues/mohd-faizy/feature-engineering-hacks)
-![Stars GitHub](https://img.shields.io/github/stars/mohd-faizy/feature-engineering-hacks)
-![Language](https://img.shields.io/github/languages/top/mohd-faizy/feature-engineering-hacks)
-![Size](https://img.shields.io/github/repo-size/mohd-faizy/feature-engineering-hacks)
+# Feature Engineering Handbook
 
-![feature engineering & feature selection](https://github.com/mohd-faizy/feature-engineering-hacks/blob/main/_img/banner.jpg)
+<div align="center">
 
-### What is feature engineering & feature selection?
+![Author](https://img.shields.io/badge/author-faizy-red?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-Visual%20Studio%20Code-blue?style=flat-square)
+![Maintained](https://img.shields.io/maintenance/yes/2025?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/mohd-faizy/feature-engineering-hacks?style=flat-square)
+![Issues](https://img.shields.io/github/issues/mohd-faizy/feature-engineering-hacks?style=flat-square)
+![Stars GitHub](https://img.shields.io/github/stars/mohd-faizy/feature-engineering-hacks?style=flat-square)
+![Language](https://img.shields.io/github/languages/top/mohd-faizy/feature-engineering-hacks?style=flat-square)
+![Size](https://img.shields.io/github/repo-size/mohd-faizy/feature-engineering-hacks?style=flat-square)
 
+![Banner](_img/banner.png)
 
-`Feature engineering` and `feature selection` are both important data preparation tasks in machine learning.
+</div>
 
->Feature engineering is the process of creating new features from existing data, while feature selection is the process of selecting a subset of features from a dataset.
+## 📖 Introduction
+
+**Feature Engineering** and **Feature Selection** are critical data preparation tasks in machine learning that significantly impact model performance.
+
+> **Feature Engineering** is the process of creating new features from existing data.
+>
+> **Feature Selection** is the process of selecting a subset of features from a dataset.
+
+These techniques help key aspects of your ML pipeline:
+-   **Improve Performance**: Create features more relevant to the target variable.
+-   **Reduce Overfitting**: Limit the number of redundant features.
+-   **Enhance Interpretability**: Simplifies models making them easier to understand.
 
 <p align='center'>
-  <a href="#"><img src='https://github.com/mohd-faizy/feature-engineering-hacks/blob/main/_img/feat-sel-flow.png'></a>
+  <img src='_img/feat-sel-flow.png' alt='Feature Selection Flow' width="600">
 </p>
 
-Feature engineering can be used to improve the performance of machine learning models by creating features that are more relevant to the target variable. For example, if you are trying to predict whether a customer will churn, you might create a feature that is the number of days since the customer last made a purchase.
-
-Feature selection can be used to improve the performance of machine learning models by reducing the number of features that need to be processed. This can be helpful for reducing overfitting and improving the interpretability of models.
-
-There are many different methods for feature engineering and feature selection, and the best approach will vary depending on the data and the machine learning algorithm being used. However, both feature engineering and feature selection are important tasks that can improve the performance of machine learning models.
-
-- Here are some examples of **feature engineering**:
-
-  - Creating new features by combining existing features. 
-    >**For example** -  you could create a feature - that is the sum of two other features.
-
-  - Creating new features by transforming existing features. 
-     >**For example** -  you could create a feature that is the square root of another feature.
-
-  - Creating new features by discretizing existing features. 
-     >**For example** -  you could create a feature that is the binary indicator of whether a value is greater than a certain threshold.
-
-## 🛣️Roadmap
-![feature engineering & feature selection](https://github.com/mohd-faizy/feature-engineering-hacks/blob/main/_img/Feat-Engg-Sel.png)
-
-## Summary of the Some main classes and functions for `feature_selection` in Scikit-learn:
-
-| Class/Function | Description |
-| --- | --- |
-| `SelectKBest` | Selects the top K features based on a scoring function |
-| `chi2` | This test is used to measure the association between a feature and the target variable. Features with a high chi-squared value are considered to be important.|
-| `SelectPercentile` | Selects the top percentile of features based on a scoring function |
-| `SelectFromModel` | Selects features based on importance weights computed by a supervised model |
-| `RFE` | Recursive feature elimination method starts with all of the features and then iteratively removes the least important features until a specified number of features remain. |
-| `RFECV` | RFECV function is a recursive feature elimination method that uses cross-validation to select the best subset of features |
-| `SequentialFeatureSelector` | Performs forward or backward feature selection with cross-validation |
-| `mutual_info_regression` | `mutual_info_regression` is a function in scikit-learn's feature selection module that computes mutual information between each feature and a continuous target variable. Mutual information measures the amount of information that can be obtained about one variable by observing another variable. In the context of feature selection, mutual information can be used to identify the features that are most informative about the target variable.`mutual_info_regression`takes two input arrays: the feature matrix `X` and the target variable `y`. It returns an array of mutual information scores, where each score corresponds to a feature in `X`. The higher the score, the more informative the feature is about the target variable. |
-| `mutual_info_classification` | Computes the mutual information between each feature and a categorical target variable |
-| `f_regression` | `f_regression` is a function in scikit-learn's feature selection module that computes the `F-value` and `p-value` for each feature in a dataset with respect to a continuous target variable. **The F-value measures the ratio of variance between the target variable and the feature variable, while the p-value indicates the significance of the F-value.** In the context of feature selection, F-values and p-values can be used to identify the features that are most correlated with the target variable. it takes two input arrays: the feature `matrix X` and the target variable `y`. It returns two arrays: the `F-values` and the `p-values`, where each value corresponds to a feature in `X`. The higher the `F-value`, the more correlated the feature is with the target variable, while the lower the `p-value`, the more significant the correlation is.|
-
-These classes and functions are part of the `sklearn.feature_selection` module and can be used to select a subset of features from a dataset based on various criteria.
-
-
-## Most commonly used feature selection methods in Scikit-learn:
-
-| Method | Description | Scikit-learn Class |
-| --- | --- | --- |
-| Filter methods | Select features based on a statistical measure | `SelectKBest`, `SelectPercentile`, `f_classif`, `f_regression`, `chi2`, `mutual_info_classif`, `mutual_info_regression` |
-| Wrapper methods | Select features based on the performance of a model trained with different subsets of features | `RFECV`, `SequentialFeatureSelector` |
-| Embedded methods | Select features based on their importance as learned by a model | `SelectFromModel`, `LassoCV`, `RidgeCV`, `ElasticNetCV`, `RandomForestClassifier`, `RandomForestRegressor`, `GradientBoostingClassifier`, `GradientBoostingRegressor`, `XGBClassifier`, `XGBRegressor` |
-
-- **Filter methods** rank features based on a statistical measure that assesses the strength of the relationship between each feature and the target variable. Examples of such measures include the F-value (for continuous target variables), the chi-squared statistic (for categorical target variables), and mutual information (for both continuous and categorical target variables). These methods are computationally efficient and can be used as a preprocessing step to reduce the dimensionality of the data before applying a more complex model.
-
-- **Wrapper methods** evaluate the performance of a model trained with different subsets of features and select the subset that leads to the best performance. Examples of such methods include recursive feature elimination (RFE) and sequential feature selection (SFS). These methods are computationally more expensive than filter methods but can lead to better performance if the optimal subset of features is highly dependent on the specific task and dataset.
-
-- **Embedded methods** incorporate feature selection as part of the model training process. Examples of such methods include regularization (e.g., L1 and L2 regularization in linear models), tree-based methods (e.g., random forests and gradient boosting), and XGBoost. These methods can be computationally efficient and often lead to better performance than filter methods but can be sensitive to the choice of hyperparameters and model architecture.
-
-
- ## Charts that might be useful for `feature selection` and `feature engineering`
-
-| Chart | Description |
-| --- | --- |
-| Correlation matrix heatmap | A correlation matrix heatmap can help you visualize the correlation between different features. This can be useful for identifying redundant features that can be removed to reduce the dimensionality of the data. |
-| Box plot | A box plot can help you identify outliers and understand the distribution of a feature. This can be useful for deciding how to handle outliers and for identifying features that might need to be transformed or normalized. |
-| Scatter plot matrix | A scatter plot matrix can help you visualize the relationship between different features. This can be useful for identifying features that are highly correlated with the target variable and for identifying interactions between features. |
-| Decision tree | A decision tree can be used to visualize the importance of different features in a predictive model. This can be useful for understanding which features are most important for predicting the target variable and for identifying features that can be pruned to improve the model's performance. |
-| Principal component analysis (PCA) plot | A PCA plot can be used to visualize the relationship between different features in a high-dimensional dataset. This can be useful for identifying clusters of similar observations and for understanding the underlying structure of the data. |
-| Feature importance plot | A feature importance plot can be used to visualize the importance of different features in a predictive model. This can be useful for understanding which features are most important for predicting the target variable and for identifying features that can be pruned to improve the model's performance. |
-
-## Useful Code snippet
-
-- `SelectKBest`
-  ```python
-  from sklearn.datasets import load_iris
-  from sklearn.feature_selection import SelectKBest
-  from sklearn.feature_selection import chi2
-
-  # Load iris dataset
-  iris = load_iris()
-  X, y = iris.data, iris.target
-
-  # Apply SelectKBest feature selection
-  selector = SelectKBest(chi2, k=2)
-  X_new = selector.fit_transform(X, y)
-
-  # Print selected features
-  print(selector.get_support(indices=True))
-  ```
-  We then apply the `SelectKBest` feature selection method with the `chi2` scoring function to select the top 2 features. Finally, we transform the original data into the new feature space using the fit_transform method and print the indices of the selected features using the get_support method
-
-
-
-- `Chi-squared test`
-  ```python
-  from sklearn.feature_selection import chi2
-
-  # Load the wine dataset.
-  X, y = datasets.load_wine(return_X_y=True)
-
-  # Select the top 5 features using the chi-squared test.
-  selector = chi2(X, y)
-  selector.fit(X, y)
-  indices = selector.get_support()
-  features = X.columns[indices]
-
-  # Print the selected features.
-  print(features)
-  ```
-  ```
-  ['alcohol', 'malic_acid', 'total_acidity', 'density', 'residual_sugar']
-  ```
-
-
-
-- `feature_selection.SelectPercentile`
-  ```python
-  from sklearn.datasets import load_iris
-  from sklearn.feature_selection import SelectPercentile
-  from sklearn.feature_selection import f_classif
-
-  # Load iris dataset
-  iris = load_iris()
-  X, y = iris.data, iris.target
-
-  # Apply SelectPercentile feature selection
-  selector = SelectPercentile(f_classif, percentile=50)
-  X_new = selector.fit_transform(X, y)
-
-  # Print selected features
-  print(selector.get_support(indices=True))
-  ```
-  We then apply the `SelectPercentile` feature selection method with the `f_classif` scoring function to select the top `50%` of features. Finally, we transform the original data into the new feature space using the fit_transform method and print the indices of the selected features using the `get_support` method.
-
-
-
-
-- `SelectFromModel`
-  ```python
-  from sklearn.datasets import load_iris
-  from sklearn.feature_selection import SelectFromModel
-  from sklearn.linear_model import LogisticRegression
-
-  # Load iris dataset
-  iris = load_iris()
-  X, y = iris.data, iris.target
-
-  # Apply SelectFromModel feature selection
-  selector = SelectFromModel(LogisticRegression(penalty='l1', C=0.1))
-  X_new = selector.fit_transform(X, y)
-
-  # Print selected features
-  print(selector.get_support(indices=True))
-
-  ```
-  We apply the `SelectFromModel` feature selection method with a `LogisticRegression` model that uses `L1` regularization with a penalty parameter of `0.1`. Finally, we transform the original data into the new feature space using the `fit_transform` method and print the indices of the selected features using the `get_support method`. Note that the model used in `SelectFromModel` can be any supervised learning model that has a `coef_` or `feature_importances_` attribute after fitting.
-
-
-
-- `Recursive feature elimination(RFE)`
-
-  ```python
-  from sklearn.feature_selection import RFE
-  from sklearn.ensemble import RandomForestRegressor
-
-  # Create a random forest regressor
-  rf = RandomForestRegressor()
-
-  # Create an RFE object
-  rfe = RFE(rf, n_features_to_select=5)
-
-  # Fit the RFE object to the training data
-  rfe.fit(X_train, y_train)
-
-  # Get the selected features
-  selected_features = rfe.support_
-
-  # Get the importance scores of the features
-  importance_scores = rfe.ranking_
-  ```
-
-- `Recursive feature elimination with cross-validation (RFECV)`
-  ```python
-  from sklearn.feature_selection import RFECV
-
-  # Load the wine dataset.
-  X, y = datasets.load_wine(return_X_y=True)
-
-  # Create an RFECV object.
-  selector = RFECV(estimator=LogisticRegression(), step=1, cv=5, scoring='accuracy')
-
-  # Fit the RFECV object.
-  selector.fit(X, y)
-
-  # Get the indices of the selected features.
-  indices = selector.get_support()
-
-  # Get the selected features.
-  features = X.columns[indices]
-
-  # Print the selected features.
-  print(features)
-  ```
-  ```
-  ['alcohol', 'malic_acid', 'total_acidity', 'density', 'residual_sugar']
-  ```
-
-
-- `SequentialFeatureSelector`
-  ```python
-  from sklearn.datasets import load_iris
-  from sklearn.feature_selection import SequentialFeatureSelector
-  from sklearn.neighbors import KNeighborsClassifier
-
-  # Load iris dataset
-  iris = load_iris()
-  X, y = iris.data, iris.target
-
-  # Apply SequentialFeatureSelector feature selection
-  selector = SequentialFeatureSelector(KNeighborsClassifier(n_neighbors=3), n_features_to_select=2)
-  X_new = selector.fit_transform(X, y)
-
-  # Print selected features
-  print(selector.get_support(indices=True))
-  ```
-  we apply the `SequentialFeatureSelector` feature selection method with a `KNeighborsClassifier` model that uses `3` nearest neighbors and select the top `2` features using `n_features_to_select`. Finally, we transform the original data into the new feature space using the `fit_transform` method and print the indices of the selected features using the `get_support` method. Note that the model used in `SequentialFeatureSelector` can be any supervised learning model that has a `coef_` or `feature_importances_` attribute after fitting.
-
-
--  `mutual_info_regression`
-    ```python
-    from sklearn.datasets import load_diabetes
-    from sklearn.feature_selection import SelectKBest, mutual_info_regression
-
-    # Load the diabetes dataset
-    X, y = load_diabetes(return_X_y=True)
-
-    # Select the top 3 features using mutual information regression
-    selector = SelectKBest(mutual_info_regression, k=3)
-    X_new = selector.fit_transform(X, y)
-
-    # Print the indices of the selected features
-    print(selector.get_support(indices=True))
-
-    ```
-    In this example, we use `mutual_info_regression` as the scoring function in `SelectKBest` to select the top `3` features from the diabetes dataset. The `get_support` method is used to retrieve the indices of the selected features.
-
-
-- `mutual_info_classification`
-
-  ```python
-  from sklearn.datasets import load_breast_cancer
-  from sklearn.feature_selection import SelectKBest, mutual_info_classification
-
-  # Load the breast cancer dataset
-  X, y = load_breast_cancer(return_X_y=True)
-
-  # Select the top 5 features using mutual information classification
-  selector = SelectKBest(mutual_info_classification, k=5)
-  X_new = selector.fit_transform(X, y)
-
-  # Print the indices of the selected features
-  print(selector.get_support(indices=True))
-
-  ```
-  In this example, we use `mutual_info_classification` as the scoring function in SelectKBest to select the top `5` features from the breast cancer dataset. The `get_support` method is used to retrieve the indices of the selected features. Note that `mutual_info_classification` is appropriate when the target variable is categorical, such as in a classification problem. If the target variable is continuous,`mutual_info_regression` should be used instead.
-
-- `f_regression`
-  ```python
-  from sklearn.datasets import load_diabetes
-  from sklearn.feature_selection import SelectKBest, f_regression
-
-  # Load the diabetes dataset
-  X, y = load_diabetes(return_X_y=True)
-
-  # Select the top 3 features using F-regression
-  selector = SelectKBest(f_regression, k=3)
-  X_new = selector.fit_transform(X, y)
-
-  # Print the indices of the selected features
-  print(selector.get_support(indices=True))
-  ```
-  In this example, we use `f_regression` as the scoring function in `SelectKBest` to select the top `3` features from the diabetes dataset. The `get_support` method is used to retrieve the indices of the selected features. Note that `f_regression` is appropriate when the target variable is continuous. If the target variable is categorical, `chi2` or `mutual_info_classif` should be used instead.
-
-
-- **Feature Importance** This method ranks the importance of features based on the weights or coefficients of a machine learning model. You can use the `feature_importances_` attribute of a tree-based model, such as `RandomForestClassifier` or `ExtraTreesClassifier`, to get the feature importances. For example, to select the top `5` features based on the feature importances from a random forest classifier, you can use:
-
-  ```python
-  from sklearn.ensemble import RandomForestClassifier
-
-  X = data.drop('label', axis=1)
-  y = data['label']
-
-  estimator = RandomForestClassifier()
-  estimator.fit(X, y)
-
-  # Print the feature importances
-  feature_importances = pd.Series(estimator.feature_importances_, index=X.columns)
-  print(feature_importances)
-
-  # Select the top 5 features
-  feature_names = feature_importances.sort_values(ascending=False)[:5].index
-  print(feature_names)
-  ```
-
-
-- Once you have `selected a feature selection method`, you can use it to select the features to include in your model. Scikit-learn provides a number of tools for feature engineering, including:
-
-  - **Polynomial features**: These features are created by taking the powers of existing features. For example, if you have a feature called "age", you could create a polynomial feature called "age^2".
-
-  - **Interaction features**: These features are created by taking the products of existing features. For example, if you have features called "age" and "gender", you could create an interaction feature called "age*gender".
-
-  - **Time series features**: These features are created by taking the values of a feature over time. For example, if you have a feature called "sales", you could create a time series feature called "sales_last_week".
-
-- Once you have `engineered the features`, you can use them to train your model. Scikit-learn provides a number of tools for model training, including:
-
-  - **Linear regression**: This is a simple model that can be used to predict a continuous target variable.
-
-  - **Logistic regression**: This is a model that can be used to predict a binary target variable.
-
-  - **Decision trees**: These are models that can be used to predict both continuous and binary target variables.
-
-  - **Random forests**: These are models that are similar to decision trees, but they are more robust to overfitting.
-
-- Once you have `trained your model`, you can evaluate its performance. Scikit-learn provides a number of tools for model evaluation, including:
-
-  - **Accuracy**: This is the percentage of instances that the model correctly predicts.
-
-  - **Precision**: This is the percentage of instances that the model predicts as positive that are actually positive.
-
-  - **Recall**: This is the percentage of instances that are actually positive that the model predicts as positive.
-
-  - **F1 score**: This is a measure of the model's overall performance. It is calculated as the harmonic mean of the precision and recall.Feature selection and feature engineering are important steps in machine learning. By selecting the right features and engineering them correctly, you can improve the performance of your model.
-
-### `sklearn.model_selection` module in scikit-learn provides several functions for model selection and evaluation. Here are some of the commonly used functions.
-
-| **Function**             | **Description**                                             |
-|----------------------|-----------------------------------------------------------------|
-| `train_test_split`   | Split the dataset into training and testing sets.               |
-| `cross_val_score`    | Perform cross-validation and return an array of scores.         |
-| `cross_validate`     | Perform cross-validation and return multiple evaluation metrics.|
-| `GridSearchCV`       | Perform an exhaustive grid search for hyperparameter tuning.    |
-| `RandomizedSearchCV` | Perform a randomized search for hyperparameter tuning.          |
-| `KFold`              | Generate K-fold cross-validation splits.                        |
-| `StratifiedKFold`    | Generate stratified K-fold cross-validation splits.             |
-| `TimeSeriesSplit`    | Generate cross-validation splits for time series data.          |
-| `ShuffleSplit`       | Generate random train/test indices for multiple iterations.     |
-
-
-
-## Contributing
-This repository is open source and contributions are welcome. If you have any ideas for hacks or tips, or if you find any errors, please feel free to open an issue or submit a pull request.
-
-## ⚖ ➤ License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
-## ❤️ Support
-
-If you find this repository helpful, show your support by starring it! For questions or feedback, reach out on [Twitter(`X`)](https://twitter.com/F4izy).
-
-#### $\color{skyblue}{\textbf{Connect with me:}}$
-
-➤ If you have questions or feedback, feel free to reach out!!!
-
-[<img align="left" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" width="32px"/>][twitter]
-[<img align="left" src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="32px"/>][linkedin]
-[<img align="left" src="https://cdn-icons-png.flaticon.com/512/2626/2626299.png" width="32px"/>][Portfolio]
-
-[twitter]: https://twitter.com/F4izy
-[linkedin]: https://www.linkedin.com/in/mohd-faizy/
-[Portfolio]: https://ai.stackexchange.com/users/36737/faizy?tab=profile
+## 📑 Table of Contents
+
+-   [Roadmap](#%EF%B8%8F-roadmap)
+-   [Feature Engineering Techniques](#-feature-engineering-techniques)
+-   [Feature Selection Methods](#-feature-selection-methods)
+    -   [Scikit-learn Classes & Functions](#scikit-learn-classes--functions-for-feature_selection)
+    -   [Method Categories](#most-commonly-used-feature-selection-methods)
+-   [Visualizations](#-visualizations-for-analysis)
+-   [Code Snippets & Examples](#-code-snippets--examples)
+-   [Model Selection & Evaluation](#-model-selection--evaluation)
+-   [Contributing](#-contributing)
+-   [License](#--license)
+-   [Connect with Me](#-connect-with-me)
 
 ---
 
-<img src="https://github-readme-stats.vercel.app/api?username=mohd-faizy&show_icons=true" width=380px height=200px />
+## 🛣️ Roadmap
+
+![Feature Engineering & Selection Map](_img/Feat-Engg-Sel.png)
+
+---
+
+## 🛠 Feature Engineering Techniques
+
+Common strategies include:
+
+1.  **Combination**: Creating new features by combining existing ones (e.g., summing two columns).
+2.  **Transformation**: Mathematical transformations (e.g., square root, log, box-cox).
+3.  **Discretization**: Converting continuous variables into bins or buckets.
+4.  **Polynomial Features**: Powers of existing features (e.g., $age^2$).
+5.  **Interaction Features**: Products of features (e.g., $age \times gender$).
+6.  **Time Series Features**: Extracting time-based components (e.g., day of week, lag features).
+
+---
+
+## 🎯 Feature Selection Methods
+
+### Scikit-learn Classes & Functions for `feature_selection`
+
+| Class/Function | Description |
+| :--- | :--- |
+| `SelectKBest` | Selects the top K features based on a scoring function. |
+| `chi2` | Chi-squared stats of non-negative features for classification tasks. |
+| `SelectPercentile` | Selects the top percentile of features based on a scoring function. |
+| `SelectFromModel` | Meta-transformer for selecting features based on importance weights. |
+| `RFE` | Recursive Feature Elimination; removes weakest features iteratively. |
+| `RFECV` | RFE with cross-validation to select the best number of features. |
+| `SequentialFeatureSelector` | Transformer that performs sequential feature selection (forward or backward). |
+| `mutual_info_regression` | Estimate mutual information for a continuous target variable. |
+| `mutual_info_classification` | Estimate mutual information for a discrete target variable. |
+| `f_regression` | Univariate linear regression tests returning F-value and p-value. |
+
+### Most Commonly Used Feature Selection Methods
+
+| Method Type | Description | Scikit-learn Class Examples |
+| :--- | :--- | :--- |
+| **Filter Methods** | Select features based on statistical measures (e.g., correlation, chi-square). Fast and generic. | `SelectKBest`, `SelectPercentile`, `chi2`, `f_regression`, `mutual_info_classif` |
+| **Wrapper Methods** | Evaluate subsets of features by training a model. Computationally expensive but accurate. | `RFECV`, `SequentialFeatureSelector` |
+| **Embedded Methods** | Perform feature selection during model training (e.g., regularization). | `SelectFromModel`, `LassoCV`, `RandomForestClassifier`, `XGBRegressor` |
+
+---
+
+## 📊 Visualizations for Analysis
+
+Charts that assist in deciding which features to keep or engineer:
+
+| Chart | Purpose |
+| :--- | :--- |
+| **Correlation Heatmap** | Identify redundant features by visualizing correlations. |
+| **Box Plot** | Detect outliers and understand feature distribution. |
+| **Scatter Plot Matrix** | Visualize relationships between multiple features and the target. |
+| **Decision Tree Viz** | See which features the model prioritizes for splitting. |
+| **PCA Plot** | Understand high-dimensional data structure and clusters. |
+| **Feature Importance Plot** | Bar chart showing the relative importance scores of features. |
+
+---
+
+## 💻 Code Snippets & Examples
+
+### 1. SelectKBest (Filter Method)
+```python
+from sklearn.datasets import load_iris
+from sklearn.feature_selection import SelectKBest, chi2
+
+# Load iris dataset
+iris = load_iris()
+X, y = iris.data, iris.target
+
+# Apply SelectKBest feature selection
+selector = SelectKBest(chi2, k=2)
+X_new = selector.fit_transform(X, y)
+
+# Print selected feature indices
+print(selector.get_support(indices=True))
+```
+
+### 2. Chi-Squared Test
+```python
+from sklearn.feature_selection import chi2
+from sklearn import datasets
+
+X, y = datasets.load_wine(return_X_y=True)
+
+selector = chi2(X, y)
+# Note: For chi2 simply calculating, you don't strictly need a class context if just wanting scores, 
+# but SelectKBest usually wraps it. Here is conceptual usage:
+# selector = SelectKBest(chi2, k=5).fit(X, y)
+# features = X.columns[selector.get_support()] 
+# (Assuming X is a DataFrame for columns access)
+```
+
+### 3. Recursive Feature Elimination (RFE)
+```python
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import RandomForestRegressor
+
+rf = RandomForestRegressor()
+# Select top 5 features
+rfe = RFE(rf, n_features_to_select=5)
+rfe.fit(X_train, y_train)
+
+print("Selected Features:", rfe.support_)
+print("Ranking:", rfe.ranking_)
+```
+
+### 4. RFECV (RFE with Cross-Validation)
+```python
+from sklearn.feature_selection import RFECV
+from sklearn.linear_model import LogisticRegression
+
+selector = RFECV(estimator=LogisticRegression(), step=1, cv=5, scoring='accuracy')
+selector.fit(X, y)
+
+print("Optimal number of features: %d" % selector.n_features_)
+print("Selected features indices:", selector.get_support(indices=True))
+```
+
+### 5. Sequential Feature Selector
+```python
+from sklearn.feature_selection import SequentialFeatureSelector
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors=3)
+sfs = SequentialFeatureSelector(knn, n_features_to_select=2)
+X_new = sfs.fit_transform(X, y)
+
+print(sfs.get_support(indices=True))
+```
+
+### 6. Feature Importance from Trees
+```python
+from sklearn.ensemble import RandomForestClassifier
+import pandas as pd
+
+model = RandomForestClassifier()
+model.fit(X, y)
+
+# Combine feature names and their importance
+feature_importances = pd.Series(model.feature_importances_, index=X.columns)
+print(feature_importances.sort_values(ascending=False).head(5))
+```
+
+---
+
+## 📈 Model Selection & Evaluation
+
+The `sklearn.model_selection` module is essential for validating your feature engineering efforts.
+
+| Function | Description |
+| :--- | :--- |
+| `train_test_split` | Split arrays or matrices into random train and test subsets. |
+| `cross_val_score` | Evaluate a score by cross-validation. |
+| `cross_validate` | Evaluate multiple metric(s) by cross-validation. |
+| `GridSearchCV` | Exhaustive search over specified parameter values for an estimator. |
+| `RandomizedSearchCV` | Randomized search on hyper parameters. |
+| `KFold` / `StratifiedKFold` | K-Folds cross-validator (Stratified preserves class percentage). |
+
+### Example: Hyperparameter Tuning with `GridSearchCV`
+
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import make_classification
+
+# Generate dummy data
+X, y = make_classification(n_samples=1000, n_features=20)
+
+# Define model and parameter grid
+rf = RandomForestClassifier()
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5]
+}
+
+# Setup GridSearchCV
+grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=5, n_jobs=-1, scoring='accuracy')
+
+# Fit and print best results
+grid_search.fit(X, y)
+print(f"Best Parameters: {grid_search.best_params_}")
+print(f"Best Score: {grid_search.best_score_:.4f}")
+```
+
+---
+
+## 📦 Other Powerful Libraries
+
+Beyond Scikit-learn, several specialized libraries excel at specific feature engineering tasks.
+
+### 1. [Category Encoders](https://contrib.scikit-learn.org/category_encoders/)
+Advanced encoding methods for categorical variables, often superior to standard OneHot or Label encoding.
+
+| Encoder | Description |
+| :--- | :--- |
+| `BinaryEncoder` | Encodes categorical features into binary codes (fewer columns than OneHot). |
+| `TargetEncoder` | Encodes categories based on the mean of the target variable (great for high cardinality). |
+| `WOEEncoder` | Weight of Evidence encoding; measures the "strength" of a grouping for separating good and bad. |
+| `HashingEncoder` | Hash hashing of categories; useful for high-cardinality and online learning. |
+
+```python
+import category_encoders as ce
+import pandas as pd
+
+X = pd.DataFrame({'city': ['New York', 'Paris', 'Tokyo', 'Paris', 'New York'], 'price': [200, 150, 300, 160, 210]})
+y = [1, 0, 1, 0, 1]  # Target
+
+# Target Encoding Example
+encoder = ce.TargetEncoder(cols=['city'])
+X_encoded = encoder.fit_transform(X, y)
+
+print(X_encoded)
+```
+
+### 2. [Feature-engine](https://feature-engine.trainindata.com/)
+A library specifically designed for feature engineering with a scikit-learn compatible API.
+
+| Module | Description |
+| :--- | :--- |
+| `imputation` | Methods like `MeanMedianImputer`, `EndTailImputer` for handling missing data. |
+| `encoding` | `RareLabelEncoder` (groups rare categories), `MeanEncoder`, `CountFrequencyEncoder`. |
+| `discretisation` | `EqualFrequencyDiscretiser`, `DecisionTreeDiscretiser`. |
+| `outliers` | `Winsorizer` to cap outliers at given quantiles. |
+
+```python
+from feature_engine.encoding import RareLabelEncoder
+import pandas as pd
+
+# Data with rare category 'E'
+X = pd.DataFrame({'category': ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E']})
+
+# Group categories occurring in less than 20% of rows into 'Rare'
+encoder = RareLabelEncoder(tol=0.2, n_categories=1, replace_with='Rare')
+X_encoded = encoder.fit_transform(X)
+
+print(X_encoded['category'].value_counts())
+```
+
+### 3. [Imbalanced-learn](https://imbalanced-learn.org/stable/)
+While primarily for sampling, it is crucial for feature prep in imbalanced datasets.
+
+| Method | Description |
+| :--- | :--- |
+| `SMOTE` | Synthetic Minority Over-sampling Technique; generates synthetic samples. |
+| `NearMiss` | Under-sampling based on k-nearest neighbors. |
+| `ADASYN` | Adaptive Synthetic sampling; focuses on "hard to learn" examples. |
+
+```python
+from imblearn.over_sampling import SMOTE
+from collections import Counter
+
+X, y = make_classification(n_classes=2, weights=[0.9, 0.1], n_samples=1000)
+print(f"Original class distribution: {Counter(y)}")
+
+# Resample using SMOTE
+sm = SMOTE(random_state=42)
+X_res, y_res = sm.fit_resample(X, y)
+
+print(f"Resampled class distribution: {Counter(y_res)}")
+```
+
+### 4. [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/)
+Although an interpretability tool, SHAP values are powerful for **feature selection** by understanding true contribution.
+
+```python
+import shap
+import xgboost as xgb
+
+# Train a model
+model = xgb.XGBClassifier().fit(X, y)
+
+# Explain predictions
+explainer = shap.Explainer(model)
+shap_values = explainer(X)
+
+# Visualize feature importance (beeswarm plot)
+shap.plots.beeswarm(shap_values)
+```
+
+## 🤝 Contributing
+
+This repository is open source and contributions are welcome! 
+If you have any ideas, hacks, tips, or find errors:
+1.  Fork the repository.
+2.  Create a branch.
+3.  Submit a Pull Request.
+4.  Or simply open an **Issue**.
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+#### Connect with me
+
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white)](https://twitter.com/F4izy)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohd-faizy/)
+[![Stack Exchange](https://img.shields.io/badge/Stack_Exchange-1E5397?style=flat-square&logo=stack-exchange&logoColor=white)](https://ai.stackexchange.com/users/36737/faizy)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/mohd-faizy)
+
+</div>
+
 
